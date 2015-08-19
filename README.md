@@ -2,6 +2,8 @@
 
 Desktop code editor for web developers based on [Eclipse Orion](https://wiki.eclipse.org/Orion) and [NW.js](http://nwjs.io/), similar to Atom, Brackets, LightTable or Visual Studio Code. This is still a beta version.
 
+![Orion Desktop](http://i.imgur.com/aweyOyK.jpg)
+
 ## Usage
 
 Go to the `orion-desktop` directory, run `npm install` to get the latest Orion code, download [NW.js](http://nwjs.io/) and run `nw orion-desktop`.
