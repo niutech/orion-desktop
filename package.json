@@ -1,0 +1,22 @@
+{
+	"name": "orion-desktop",
+	"version": "0.0.37",
+	"description": "Eclipse Orion desktop app based on NW.js",
+	"main": "index.html",
+	"window": {
+		"show": false
+	},
+	"dependencies": {
+		"orion": "~0.0.37"
+	},
+	"keywords": [
+		"orion",
+		"eclipse",
+		"ide",
+		"node-webkit"
+	],
+	"author": {
+		"name": "Jerzy Głowacki"
+	},
+	"license": "Eclipse Public License"
+}

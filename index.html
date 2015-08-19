@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eclipse Orion</title>
+</head>
+<body>
+	<script>
+	/**
+	 * Orion Desktop 0.0.37
+	 * (c) 2015 by Jerzy Głowacki
+	 * Eclipse Public License v1.0
+	 */
+	var gui = require('nw.gui');
+	var orion = require('orion');
+	var params = {
+		port: 8081,
+		workspaceDir: process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'],
+		passwordFile: null,
+		password: null,
+		configParams: {},
+		dev: null,
+		log: null
+	};
+	orion(params).listen(8081, '127.0.0.1', 511, function() {
+		var win = gui.Window.open('http://127.0.0.1:8081', {
+			title: 'Eclipse Orion',
+			toolbar: false,
+			icon: 'orion.png'
+		});
+		win.show();
+		win.maximize();
+		win.on('loaded', function () {
+			setTimeout(function () {
+				win.eval(null, '[].forEach.call(document.querySelectorAll("a.dropdownMenuItem"), function (a) { if(a.innerText == "Web Browser") a.target = "_blank"; });');
+			}, 1000);
+		});
+		win.on('close', function () {
+			window.close();
+			this.close(true);
+		});
+	});
+	</script>
+	<p>Hello!</p>
+</body>
+</html>
