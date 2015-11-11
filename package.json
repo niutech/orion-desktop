@@ -1,13 +1,13 @@
 {
 	"name": "orion-desktop",
-	"version": "0.0.37",
+	"version": "0.0.38",
 	"description": "Eclipse Orion desktop app based on NW.js",
 	"main": "index.html",
 	"window": {
 		"show": false
 	},
 	"dependencies": {
-		"orion": "~0.0.37"
+		"orion": "~0.0.38"
 	},
 	"keywords": [
 		"orion",
