@@ -7,22 +7,22 @@
 <body>
 	<script>
 	/**
-	 * Orion Desktop 0.0.37
-	 * (c) 2015 by Jerzy Głowacki
+	 * Orion Desktop 0.0.101
+	 * (c) 2016 by Jerzy Głowacki
 	 * Eclipse Public License v1.0
 	 */
 	var gui = require('nw.gui');
-	var orion = require('orion');
+	var orion = require('orion/index.js');
 	var params = {
 		port: 8081,
 		workspaceDir: process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'],
 		passwordFile: null,
 		password: null,
-		configParams: {},
+		configParams: {"orion.single.user": true},
 		dev: null,
 		log: null
 	};
-	orion(params).listen(8081, '127.0.0.1', 511, function() {
+	orion(params).listen(params.port, '127.0.0.1', 511, function () {
 		var win = gui.Window.open('http://127.0.0.1:8081', {
 			title: 'Eclipse Orion',
 			toolbar: false,
